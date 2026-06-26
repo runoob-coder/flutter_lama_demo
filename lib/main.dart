@@ -9,6 +9,8 @@ import 'package:image_magic_eraser/image_magic_eraser.dart';
 import 'package:image_picker/image_picker.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await InpaintingService.instance.initializeOrt(
     'assets/models/lama_fp32.onnx',
   );
