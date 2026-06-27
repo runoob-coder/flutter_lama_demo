@@ -43,6 +43,11 @@ dependencies:
       ref: dynamic-island-no-clip
   image_picker: ^1.2.2
 
+dependency_overrides:
+  # 1.8.0 内存溢出 EXC_RESOURCE (RESOURCE_TYPE_MEMORY: high watermark memory limit exceeded) (limit=3376 MB)
+  # flutter_onnxruntime: 1.8.0
+  flutter_onnxruntime: 1.7.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -64,6 +69,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  config:
+    enable-swift-package-manager: true
 
   # To add assets to your application, add an assets section, like this:
   assets:

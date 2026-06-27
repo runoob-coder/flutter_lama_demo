@@ -55,7 +55,6 @@ class _DemoPageState extends State<DemoPage> {
   StreamSubscription<ModelLoadingState>? _modelLoadingSubscription;
 
   // Polygon drawing controller
-  late ImageSelectorController _imageSelectorController;
   List<List<Map<String, double>>> _polygons = [];
 
   @override
@@ -366,12 +365,9 @@ class _DemoPageState extends State<DemoPage> {
               margin: const EdgeInsets.all(8),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: ImageMaskSelector(
-                  controller: _imageSelectorController,
-                  child: _imageProvider != null
-                      ? Image(image: _imageProvider!, fit: BoxFit.contain)
-                      : null,
-                ),
+                child: _imageProvider != null
+                    ? Image(image: _imageProvider!, fit: BoxFit.contain)
+                    : null,
               ),
             ),
     );
